@@ -24,7 +24,7 @@ const Projects = () => {
       category: 'Web Development',
       image: deepdive,
       description: 'DeepDive is an AI-powered platform inspired by DeepSeek, built to deliver fast, accurate, and intelligent responses.',
-      tech: ['HTML', 'JavaScript', 'Tailwind-CSS', 'MERN Stack'],
+      tech: ['MERN Stack', 'HTML', 'JavaScript', 'Tailwind-CSS'],
       live: '#' // not needed since we show popup
     },
     {
@@ -239,5 +239,4 @@ const FlipCard = ({ id, image, title, description, tech, live, onOpenVideo }) =>
 );
 
 export default Projects;
-
 
