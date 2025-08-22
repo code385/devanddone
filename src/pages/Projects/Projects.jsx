@@ -7,6 +7,7 @@ import examai from '/src/assets/projects/examai.JPG';
 import ssg from '/src/assets/projects/ssg.JPG';
 import portfolio from '/src/assets/projects/portfolio.JPG';
 import ccbs from '/src/assets/projects/ccbs.JPG';
+import todoapp from '/src/assets/projects/todo.JPG';
 import deepdive from '/src/assets/projects/deepdive.JPG';
 import deepdiveVideo from '/src/assets/projects/deepdive.mp4'; // <-- your local video
 
@@ -75,6 +76,16 @@ const Projects = () => {
       description: 'A website which provides IT Services',
       tech: ['React', 'Node.js', 'MongoDB', 'Express'],
       live: 'https://yesanddone.com/'
+    },
+    {
+      id: 7,
+      title: 'Todo App',
+      year: '2023',
+      category: 'Web Development',
+      image: todoapp,
+      description: 'This is the todo app designed for clarity and calm. It cuts through the noise, providing a simple and intuitive space to capture your tasks and organize your day. With a focus on clean design and effortless usability, it helps you reduce mental clutter, focus on what truly matters, and finally achieve a sense of accomplishment. It's more than a checklist; it's your tool for a more productive and less stressful life.',
+      tech: ['HTML', 'JavaScript', 'CSS'],
+      live: 'https://todoapp-ten-ashen.vercel.app/'
     },
   ];
 
@@ -228,3 +239,4 @@ const FlipCard = ({ id, image, title, description, tech, live, onOpenVideo }) =>
 );
 
 export default Projects;
+
