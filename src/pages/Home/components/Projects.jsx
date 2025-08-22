@@ -27,16 +27,17 @@ const Projects = () => {
       tech: ['MERN Stack', 'HTML', 'JavaScript', 'Tailwind-CSS'],
       live: '#' // not needed since we show popup
     },
-    {
+      {
       id: 2,
-      title: 'Portfolio Website',
-      year: '2023',
+      title: 'YesAndDone',
+      year: '2022',
       category: 'Web Development',
-      image: portfolio,
-      description: 'Fully-responsive portfolio built with HTML, JavaScript, CSS, BootStrap, Firebase.',
-      tech: ['HTML', 'JavaScript', 'CSS', 'BootStrap', 'Firebase'],
-      live: 'https://my-portfolio-tan-xi-83.vercel.app/'
+      image: yesdone,
+      description: 'A website which provides IT Services',
+      tech: ['React', 'Node.js', 'MongoDB', 'Express'],
+      live: 'https://yesanddone.com/'
     },
+  
     {
       id: 3,
       title: 'Intelligent Exam Preparation',
@@ -67,18 +68,8 @@ const Projects = () => {
       tech: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'],
       live: 'https://project-ccbs.vercel.app/'
     },
-    {
+       {
       id: 6,
-      title: 'YesAndDone',
-      year: '2022',
-      category: 'Web Development',
-      image: yesdone,
-      description: 'A website which provides IT Services',
-      tech: ['React', 'Node.js', 'MongoDB', 'Express'],
-      live: 'https://yesanddone.com/'
-    },
-    {
-      id: 7,
       title: 'Todo App',
       year: '2023',
       category: 'Web Development',
@@ -87,6 +78,18 @@ const Projects = () => {
       tech: ['HTML', 'JavaScript', 'CSS'],
       live: 'https://todoapp-ten-ashen.vercel.app/'
     },
+      {
+      id: 7,
+      title: 'Portfolio Website',
+      year: '2023',
+      category: 'Web Development',
+      image: portfolio,
+      description: 'Fully-responsive portfolio built with HTML, JavaScript, CSS, BootStrap, Firebase.',
+      tech: ['HTML', 'JavaScript', 'CSS', 'BootStrap', 'Firebase'],
+      live: 'https://my-portfolio-tan-xi-83.vercel.app/'
+    },
+  
+ 
   ];
 
   const filters = ['All Projects', 'Web Development', 'Other'];
@@ -239,4 +242,6 @@ const FlipCard = ({ id, image, title, description, tech, live, onOpenVideo }) =>
 );
 
 export default Projects;
+
+
 
