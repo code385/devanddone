@@ -8,6 +8,7 @@ import ssg from '/src/assets/projects/ssg.JPG';
 import portfolio from '/src/assets/projects/portfolio.JPG';
 import ccbs from '/src/assets/projects/ccbs.JPG';
 import todoapp from '/src/assets/projects/todo.JPG';
+import weatherapp from '/src/assets/projects/weather.JPG';
 import deepdive from '/src/assets/projects/deepdive.JPG';
 import deepdiveVideo from '/src/assets/projects/deepdive.mp4'; // <-- your local video
 
@@ -48,8 +49,18 @@ const Projects = () => {
       tech: ['Python', 'Inference Engine', 'Working Memory', 'Expert System', 'Streamlit'],
       live: 'https://projectaiexam-nulqpg53edw8ahsypaj3nq.streamlit.app/'
     },
-    {
+     {
       id: 4,
+      title: 'Weather App',
+      year: '2024',
+      category: 'Web Development',
+      image: weatherapp,
+      description: 'A responsive Weather App built with React + Vite, styled using Tailwind CSS and integrated with a live Weather API. It provides real-time weather updates with a clean UI and smooth user experience',
+      tech: ['React', 'Material UI', 'JavaScript', 'HTML', 'CSS'],
+      live: 'https://weather-sand-ten-78.vercel.app/'
+    },
+    {
+      id: 5,
       title: 'Simon Says Game',
       year: '2023',
       category: 'Web Development',
@@ -59,7 +70,7 @@ const Projects = () => {
       live: 'https://project-simon-says.vercel.app/'
     },
     {
-      id: 5,
+      id: 6,
       title: 'Clear Care Billing Solution',
       year: '2023',
       category: 'Web Development',
@@ -69,7 +80,7 @@ const Projects = () => {
       live: 'https://project-ccbs.vercel.app/'
     },
        {
-      id: 6,
+      id: 7,
       title: 'Todo App',
       year: '2023',
       category: 'Web Development',
@@ -79,7 +90,7 @@ const Projects = () => {
       live: 'https://todoapp-ten-ashen.vercel.app/'
     },
       {
-      id: 7,
+      id: 8,
       title: 'Portfolio Website',
       year: '2023',
       category: 'Web Development',
@@ -242,5 +253,6 @@ const FlipCard = ({ id, image, title, description, tech, live, onOpenVideo }) =>
 );
 
 export default Projects;
+
 
 
