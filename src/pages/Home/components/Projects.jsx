@@ -85,7 +85,7 @@ const Projects = () => {
       year: '2023',
       category: 'Web Development',
       image: todoapp,
-      description: 'This is the todo app designed for clarity and calm. It cuts through the noise, providing a simple and intuitive space to capture your tasks and organize your day. With a focus on clean design and effortless usability, it helps you reduce mental clutter, focus on what truly matters, and finally achieve a sense of accomplishment. It is more than a checklist; it is your tool for a more productive and less stressful life.',
+      description: 'This is the todo app designed for clarity and calm. It cuts through the noise, providing a simple and intuitive space to capture your tasks and organize your day. With a focus on clean design and effortless usability, it helps you reduce mental clutter, focus on what truly matters, and finally achieve a sense of accomplishment.',
       tech: ['HTML', 'JavaScript', 'CSS'],
       live: 'https://todoapp-ten-ashen.vercel.app/'
     },
