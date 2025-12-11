@@ -1,30 +1,55 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, X } from 'lucide-react';
 
 import yesdone from '/src/assets/projects/yesdone.JPG';
 import examai from '/src/assets/projects/examai.JPG';
 import ssg from '/src/assets/projects/ssg.JPG';
 import portfolio from '/src/assets/projects/portfolio.JPG';
 import ccbs from '/src/assets/projects/ccbs.JPG';
+import deepdive from '/src/assets/projects/deepdive.JPG';
+import greatodeal from '/src/assets/projects/GreatoDeal.JPG';
+import fedvantage from '/src/assets/projects/fedvantage.JPG';
+import deepdiveVideo from '/src/assets/projects/deepdive.mp4'; // <-- your local video
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('All Projects');
   const [filtered, setFiltered] = useState([]);
+  const [showVideo, setShowVideo] = useState(false); // modal state
 
   const projects = [
     {
       id: 1,
-      title: 'Portfolio Website',
-      year: '2023',
+      title: 'DeepDive AI',
+      year: '2024',
       category: 'Web Development',
-      image: portfolio,
-      description: 'Fully-responsive portfolio built with HTML, JavaScript, CSS, BootStrap, Firebase.',
-      tech: ['HTML', 'JavaScript', 'CSS', 'BootStrap', 'Firebase'],
-      live: 'https://my-portfolio-tan-xi-83.vercel.app/'
+      image: deepdive,
+      description: 'DeepDive is an AI-powered platform inspired by DeepSeek, built to deliver fast, accurate, and intelligent responses.',
+      tech: ['HTML', 'JavaScript', 'Tailwind-CSS', 'MERN Stack'],
+      live: '#' // not needed since we show popup
     },
     {
       id: 2,
+      title: 'IT Services Website',
+      year: '2025',
+      category: 'Web Development',
+      image: greatodeal,
+      description: 'Empowering businesses with innovative IT solutions, smart automation, and reliable technical support.',
+      tech: ['HTML', 'JavaScript', 'Tailwind-CSS', 'MERN Stack'],
+      live: 'https://greatodeal.com/'
+    },
+    {
+      id: 3,
+      title: ' IT services and solutions provider',
+      year: '2025',
+      category: 'Web Development',
+      image: fedvantage,
+      description: 'Empowering businesses with innovative IT solutions, smart automation, and reliable technical support.',
+      tech: ['HTML', 'JavaScript', 'Tailwind-CSS', 'MERN Stack'],
+      live: 'https://fedadvantage.greatowear.com/'
+    },
+    {
+      id: 4,
       title: 'Intelligent Exam Preparation',
       year: '2024',
       category: 'Other',
@@ -34,7 +59,7 @@ const Projects = () => {
       live: 'https://projectaiexam-nulqpg53edw8ahsypaj3nq.streamlit.app/'
     },
     {
-      id: 3,
+      id: 5,
       title: 'Simon Says Game',
       year: '2023',
       category: 'Web Development',
@@ -44,7 +69,7 @@ const Projects = () => {
       live: 'https://project-simon-says.vercel.app/'
     },
     {
-      id: 4,
+      id: 6,
       title: 'Clear Care Billing Solution',
       year: '2023',
       category: 'Web Development',
@@ -54,7 +79,7 @@ const Projects = () => {
       live: 'https://project-ccbs.vercel.app/'
     },
     {
-      id: 5,
+      id: 7,
       title: 'YesAndDone',
       year: '2022',
       category: 'Web Development',
@@ -63,6 +88,16 @@ const Projects = () => {
       tech: ['React', 'Node.js', 'MongoDB', 'Express'],
       live: 'https://yesanddone.com/'
     },
+     {
+      id: 8,
+      title: 'Portfolio Website',
+      year: '2023',
+      category: 'Web Development',
+      image: portfolio,
+      description: 'Fully-responsive portfolio built with HTML, JavaScript, CSS, BootStrap, Firebase.',
+      tech: ['HTML', 'JavaScript', 'CSS', 'BootStrap', 'Firebase'],
+      live: 'https://my-portfolio-tan-xi-83.vercel.app/'
+    }
   ];
 
   const filters = ['All Projects', 'Web Development', 'Other'];
@@ -75,7 +110,7 @@ const Projects = () => {
     <motion.section
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="min-h-screen bg-[#121212] pt-24 pb-12 px-4 sm:px-6 lg:px-8" // Added pt-24 for navbar spacing
+      className="min-h-screen bg-[#121212] pt-24 pb-12 px-4 sm:px-6 lg:px-8"
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}
@@ -122,16 +157,36 @@ const Projects = () => {
           className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
         >
           {filtered.map(p => (
-            <FlipCard key={p.id} {...p} />
+            <FlipCard key={p.id} {...p} onOpenVideo={() => setShowVideo(true)} />
           ))}
         </motion.div>
       </div>
+
+      {/* Video Modal */}
+      {showVideo && (
+        <div className="fixed inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center z-50">
+          <div className="relative w-11/12 md:w-3/4 lg:w-1/2 bg-[#1E1E1E] rounded-xl p-4">
+            <button
+              className="absolute top-2 right-2 text-gray-300 hover:text-white"
+              onClick={() => setShowVideo(false)}
+            >
+              <X size={24} />
+            </button>
+            <video
+              src={deepdiveVideo}
+              controls
+              autoPlay
+              className="w-full h-auto rounded-lg"
+            />
+          </div>
+        </div>
+      )}
     </motion.section>
   );
 };
 
 /* ---------- 3-D flip-card ---------- */
-const FlipCard = ({ image, title, description, tech, live }) => (
+const FlipCard = ({ id, image, title, description, tech, live, onOpenVideo }) => (
   <motion.div
     className="group relative w-full h-72 [perspective:1000px]"
     whileHover={{ scale: 1.03 }}
@@ -172,14 +227,23 @@ const FlipCard = ({ image, title, description, tech, live }) => (
             ))}
           </div>
         </div>
-        <a
-          href={live}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#6EE7B7] hover:underline"
-        >
-          <ExternalLink size={14} /> Live Demo
-        </a>
+        {id === 1 ? (
+          <button
+            onClick={onOpenVideo}
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#6EE7B7] hover:underline"
+          >
+            <ExternalLink size={14} /> Watch Demo
+          </button>
+        ) : (
+          <a
+            href={live}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#6EE7B7] hover:underline"
+          >
+            <ExternalLink size={14} /> Live Demo
+          </a>
+        )}
       </div>
     </motion.div>
   </motion.div>

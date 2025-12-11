@@ -8,6 +8,8 @@ import ssg from '/src/assets/projects/ssg.JPG';
 import portfolio from '/src/assets/projects/portfolio.JPG';
 import ccbs from '/src/assets/projects/ccbs.JPG';
 import deepdive from '/src/assets/projects/deepdive.JPG';
+import greatodeal from '/src/assets/projects/GreatoDeal.JPG';
+import fedvantage from '/src/assets/projects/fedvantage.JPG';
 import deepdiveVideo from '/src/assets/projects/deepdive.mp4'; // <-- your local video
 
 const Projects = () => {
@@ -28,16 +30,26 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: 'Portfolio Website',
-      year: '2023',
+      title: 'IT Services Website',
+      year: '2025',
       category: 'Web Development',
-      image: portfolio,
-      description: 'Fully-responsive portfolio built with HTML, JavaScript, CSS, BootStrap, Firebase.',
-      tech: ['HTML', 'JavaScript', 'CSS', 'BootStrap', 'Firebase'],
-      live: 'https://my-portfolio-tan-xi-83.vercel.app/'
+      image: greatodeal,
+      description: 'Empowering businesses with innovative IT solutions, smart automation, and reliable technical support.',
+      tech: ['HTML', 'JavaScript', 'Tailwind-CSS', 'MERN Stack'],
+      live: 'https://greatodeal.com/'
     },
     {
       id: 3,
+      title: ' IT services and solutions provider',
+      year: '2025',
+      category: 'Web Development',
+      image: fedvantage,
+      description: 'Empowering businesses with innovative IT solutions, smart automation, and reliable technical support.',
+      tech: ['HTML', 'JavaScript', 'Tailwind-CSS', 'MERN Stack'],
+      live: 'https://fedadvantage.greatowear.com/'
+    },
+    {
+      id: 4,
       title: 'Intelligent Exam Preparation',
       year: '2024',
       category: 'Other',
@@ -47,7 +59,7 @@ const Projects = () => {
       live: 'https://projectaiexam-nulqpg53edw8ahsypaj3nq.streamlit.app/'
     },
     {
-      id: 4,
+      id: 5,
       title: 'Simon Says Game',
       year: '2023',
       category: 'Web Development',
@@ -57,7 +69,7 @@ const Projects = () => {
       live: 'https://project-simon-says.vercel.app/'
     },
     {
-      id: 5,
+      id: 6,
       title: 'Clear Care Billing Solution',
       year: '2023',
       category: 'Web Development',
@@ -67,7 +79,7 @@ const Projects = () => {
       live: 'https://project-ccbs.vercel.app/'
     },
     {
-      id: 6,
+      id: 7,
       title: 'YesAndDone',
       year: '2022',
       category: 'Web Development',
@@ -76,6 +88,16 @@ const Projects = () => {
       tech: ['React', 'Node.js', 'MongoDB', 'Express'],
       live: 'https://yesanddone.com/'
     },
+     {
+      id: 8,
+      title: 'Portfolio Website',
+      year: '2023',
+      category: 'Web Development',
+      image: portfolio,
+      description: 'Fully-responsive portfolio built with HTML, JavaScript, CSS, BootStrap, Firebase.',
+      tech: ['HTML', 'JavaScript', 'CSS', 'BootStrap', 'Firebase'],
+      live: 'https://my-portfolio-tan-xi-83.vercel.app/'
+    }
   ];
 
   const filters = ['All Projects', 'Web Development', 'Other'];
